@@ -1,0 +1,23 @@
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+        jcenter()
+        maven {
+            url "http://central.maven.org/maven2/"
+        }
+        maven {
+           url "http://repo.spring.io/plugins-release/"
+        }
+    }
+
+    dependencies {
+    }
+
+    version = project.properties.get('hiveVersion')
+
+    jar {
+        manifest.attributes provider: 'gradle'
+    }
+}
