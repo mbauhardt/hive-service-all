@@ -1,0 +1,3 @@
+rootProject.name = 'hive-service-all-root'
+
+include "hive-service-all"

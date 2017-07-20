@@ -1,0 +1,13 @@
+dependencies {
+    def hiveVersion = project.properties.get('hiveVersion')
+    println "Resolve dependencies for Hive Version ${hiveVersion}"
+    compile (group:'org.apache.hive', name: 'hive-service', version: hiveVersion) {
+        // because i'm getting: Could not expand ZIP '/Users/mb/.gradle/caches/modules-2/files-2.1/org.apache.curator/apache-curator/2.6.0/1bbbe3a8c191ec5a63ec2eaec7988d8292ea65d2/apache-curator-2.6.0.pom'.     
+        exclude module: 'apache-curator'
+    }
+}
+
+jar {
+    dependsOn configurations.runtime
+    from { configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) } }
+}
