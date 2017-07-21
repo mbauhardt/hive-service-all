@@ -1,0 +1,40 @@
+apply plugin: 'org.anarres.jarjar'
+
+buildscript {
+
+repositories {
+        mavenCentral()
+        jcenter()
+        maven {
+            url "http://central.maven.org/maven2/"
+        }
+        maven {
+           url "http://repo.spring.io/plugins-release/"
+        }
+        flatDir {
+            dirs file('../lib/build/gradle').absolutePath
+        }
+    }
+
+ dependencies {
+    // dependencies needed for jarjar
+    classpath 'org.ow2.asm:asm-commons:5.0.3'
+    classpath 'org.ow2.asm:asm-util:5.0.3'
+    classpath 'org.apache.commons:commons-compress:1.9'
+    classpath 'oro:oro:2.0.8'
+    classpath "org.anarres.jarjar:jarjar-core:1.1.0"
+    classpath "org.anarres.jarjar:jarjar-gradle:1.1.0"
+ }
+}
+
+dependencies {
+    compile project(':hive-service-all')	
+
+    compile jarjar.repackage("hive-service-all-repacked.jar") {
+        //from ':hive-service-all:'+project.properties.get('hiveVersion'), { transitive = false }
+        from project(':hive-service-all').tasks['jar'].outputs.files
+        // rename imported classes
+        classRename "com.**", "com.github.mbauhardt.@1"
+    }
+}
+
