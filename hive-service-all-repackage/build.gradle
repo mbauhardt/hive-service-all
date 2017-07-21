@@ -34,9 +34,62 @@ dependencies {
         //from ':hive-service-all:'+project.properties.get('hiveVersion'), { transitive = false }
         from project(':hive-service-all').tasks['jar'].outputs.files
         // rename imported classes
-        classRename "com.**", "com.github.mbauhardt.com.@1"
-        classRename "org.**", "com.github.mbauhardt.org.@1"
-        classRename "javax.**", "com.github.mbauhardt.javax.@1"
+
+        classRename "com.codahale.**", "com.github.mbauhardt.com.codahale.@1"
+        classRename "com.facebook.**", "com.github.mbauhardt.com.facebook.@1"
+        classRename "com.fasterxml.**", "com.github.mbauhardt.com.fasterxml.@1"
+        classRename "com.google.**", "com.github.mbauhardt.com.google.@1"
+        classRename "com.jamesmurty.**", "com.github.mbauhardt.com.jamesmurty.@1"
+        classRename "com.jcraft.**", "com.github.mbauhardt.com.jcraft.@1"
+        classRename "com.jolbox.**", "com.github.mbauhardt.com.jolbox.@1"
+        classRename "com.sun.**", "com.github.mbauhardt.com.sun.@1"
+        classRename "com.thoughtworks.**", "com.github.mbauhardt.com.thoughtworks.@1"
+
+        classRename "org.antlr.**", "com.github.mbauhardt.org.antlr.@1"
+        classRename "org.aopalliance.**", "com.github.mbauhardt.org.aopalliance.@1"
+        classRename "org.apache.**", "com.github.mbauhardt.org.apache.@1"
+        classRename "org.cloudera.**", "com.github.mbauhardt.org.cloudera.@1"
+        classRename "org.codehaus.**", "com.github.mbauhardt.org.codehaus.@1"
+        classRename "org.datanucleus.**", "com.github.mbauhardt.org.datanucleus.@1"
+        classRename "org.eclipse.**", "com.github.mbauhardt.org.eclipse.@1"
+        classRename "org.eigenbase.**", "com.github.mbauhardt.org.eigenbase.@1"
+        classRename "org.fusesource.**", "com.github.mbauhardt.org.fusesource.@1"
+        classRename "org.hamcrest.**", "com.github.mbauhardt.org.hamcrest.@1"
+        classRename "org.iq80.**", "com.github.mbauhardt.org.iq80.@1"
+        classRename "org.jamon.**", "com.github.mbauhardt.org.jamon.@1"
+        classRename "org.jboss.**", "com.github.mbauhardt.org.jboss.@1"
+        classRename "org.jets3t.**", "com.github.mbauhardt.org.jets3t.@1"
+        classRename "org.joda.**", "com.github.mbauhardt.org.joda.@1"
+        classRename "org.json.**", "com.github.mbauhardt.org.json.@1"
+        classRename "org.junit.**", "com.github.mbauhardt.org.junit.@1"
+        classRename "org.mockito.**", "com.github.mbauhardt.org.mockito.@1"
+        classRename "org.mortbay.**", "com.github.mbauhardt.org.mortbay.@1"
+        classRename "org.objectweb.**", "com.github.mbauhardt.org.objectweb.@1"
+        classRename "org.objenesis.**", "com.github.mbauhardt.org.objenesis.@1"
+        classRename "org.pentaho.**", "com.github.mbauhardt.org.pentaho.@1"
+        classRename "org.slf4j.**", "com.github.mbauhardt.org.slf4j.@1"
+        classRename "org.stringtemplate.**", "com.github.mbauhardt.org.stringtemplate.@1"
+        classRename "org.tukaani.**", "com.github.mbauhardt.org.tukaani.@1"
+        classRename "org.xerial.**", "com.github.mbauhardt.org.xerial.@1"
+        classRename "org.znerd.**", "com.github.mbauhardt.org.znerd.@1"
+
+
+        classRename "javax.activation.**", "com.github.mbauhardt.javax.activation.@1"
+        classRename "javax.annotation.**", "com.github.mbauhardt.javax.annotation.@1"
+        classRename "javax.el.**", "com.github.mbauhardt.javax.el.@1"
+        classRename "javax.inject.**", "com.github.mbauhardt.javax.inject.@1"
+        classRename "javax.jdo.**", "com.github.mbauhardt.javax.jdo.@1"
+        classRename "javax.mail.**", "com.github.mbauhardt.javax.mail.@1"
+        classRename "javax.realtime.**", "com.github.mbauhardt.javax.realtime.@1"
+        classRename "javax.security.auth.message.**", "com.github.mbauhardt.javax.security.auth.message.@1"
+        classRename "javax.servlet.**", "com.github.mbauhardt.javax.servlet.@1"
+        classRename "javax.transaction.**", "com.github.mbauhardt.javax.transaction.@1"
+        classRename "javax.ws.**", "com.github.mbauhardt.javax.ws.@1"
+        classRename "javax.xml.bind.**", "com.github.mbauhardt.javax.bind.@1"
+        classRename "javax.xml.namespacei.**", "com.github.mbauhardt.javax.xml.namespace.@1"
+        classRename "javax.xml.stream.**", "com.github.mbauhardt.javax.xml.stream.@1"
+
+
         classRename "net.**", "com.github.mbauhardt.net.@1"
         classRename "jod.**", "com.github.mbauhardt.jod.@1"
         classRename "jline.**", "com.github.mbauhardt.jline.@1"
@@ -47,6 +100,7 @@ dependencies {
         classRename "javolution.**", "com.github.mbauhardt.javolution.@1"
         classRename "javaewah.**", "com.github.mbauhardt.javaewah.@1"
         classRename "au.**", "com.github.mbauhardt.au.@1"
+        classRename "antlr.**", "com.github.mbauhardt.antlr.@1"
     }
 }
 

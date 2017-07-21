@@ -7,7 +7,7 @@ subprojects {
             url "http://central.maven.org/maven2/"
         }
         maven {
-           url "http://repo.spring.io/plugins-release/"
+            url "http://repo.spring.io/plugins-release/"
         }
         flatDir {
             dirs file('lib/build/gradle').absolutePath
@@ -18,7 +18,4 @@ subprojects {
 
     version = project.properties.get('hiveVersion')
 
-    jar {
-        manifest.attributes provider: 'gradle'
-    }
 }
