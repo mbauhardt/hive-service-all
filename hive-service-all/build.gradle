@@ -1,15 +1,10 @@
 dependencies {
-    def hiveVersion = project.properties.get('hiveVersion')
-    def hadoopVersion = project.properties.get('hadoopVersion')
+    def hiveVersion = project.hasProperty('hiveVersion') ? project.properties.get('hiveVersion') : '1.1.0'
     println "Resolve dependencies for Hive Version ${hiveVersion}"
     compile(group: 'org.apache.hive', name: 'hive-service', version: hiveVersion) {
         // because i'm getting: Could not expand ZIP '/Users/mb/.gradle/caches/modules-2/files-2.1/org.apache.curator/apache-curator/2.6.0/1bbbe3a8c191ec5a63ec2eaec7988d8292ea65d2/apache-curator-2.6.0.pom'.     
         exclude module: 'apache-curator'
     }
-    // optional dependencies
-    compile(group: 'org.apache.hadoop', name: 'hadoop-mapreduce-client-core', version: hadoopVersion)
-    compile(group: 'org.apache.hadoop', name: 'hadoop-mapreduce-client-common', version: hadoopVersion)
-    compile(group: 'org.apache.hadoop', name: 'hadoop-common', version: hadoopVersion)
 }
 
 jar {
