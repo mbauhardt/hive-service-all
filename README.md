@@ -12,7 +12,7 @@ Check this project out via
     git clone git@github.com:mbauhardt/hive-service-all.git
     cd hive-service-all
     # build hive fat jar for cloudera 5.12.0
-    ./gradlew clean jar -PhadoopVersion=2.6.0-cdh5.12.0
+    ./gradlew clean jar -PhiveVersion=2.6.0-cdh5.12.0
 
 The fat jar is located under *hive-service-all-repackage/build/jarjar/hive-service-all-repackaged-1.1.0-cdh5.12.0.jar*
 You can use this jar in your separate project within a flat repository.
