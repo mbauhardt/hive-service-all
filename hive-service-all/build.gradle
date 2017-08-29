@@ -1,3 +1,4 @@
+
 dependencies {
     def hiveVersion = project.hasProperty('hiveVersion') ? project.properties.get('hiveVersion') : '1.1.0'
     println "Resolve dependencies for Hive Version ${hiveVersion}"
